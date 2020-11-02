@@ -117,7 +117,7 @@ class Ngram_Language_Model:
 
         return result
 
-    def build_prob_dict(self, flavour, words: str = None, ):
+    def build_prob_dict(self, flavour, words=None, ):
         """
         partial_type :
         convert the original model to inverted probability model:
@@ -142,7 +142,7 @@ class Ngram_Language_Model:
 
         return prob_dict, prob_range
 
-    def get_ngram_with_prob(self, words: str = None):
+    def get_ngram_with_prob(self, words=None):
         prob_dict, prob_dict_length = self.build_prob_dict(Ngram_Language_Model.FLAVOUR_GENERATE, words)
         rand = random.randint(0, prob_dict_length)
         for prob_limit, ngram_arr in prob_dict.items():
